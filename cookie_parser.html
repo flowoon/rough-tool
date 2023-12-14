@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie Parser</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding-top: 50px;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .input-container,
+    .output-container {
+      height: 70vh;
+      /* 70% of viewport height */
+      overflow-y: auto;
+      border: 1px solid #ced4da;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-container">
+          <h2>Enter your cookies:</h2>
+          <textarea id="cookieInput" class="form-control" rows="10" placeholder="Paste your cookies here"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="output-container">
+          <h2>Parsed Cookies:</h2>
+          <div id="parsedCookies"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function parseCookies() {
+      const cookieInput = document.getElementById('cookieInput').value;
+      const parsedCookies = cookieInput.split(';').map(cookie => cookie.trim());
+
+      const parsedCookiesDiv = document.getElementById('parsedCookies');
+      parsedCookiesDiv.innerHTML = '<strong>Parsed Cookies:</strong><br>' + parsedCookies.join('<br>');
+    }
+
+    document.getElementById('cookieInput').addEventListener('input', parseCookies);
+  </script>
+</body>
+
+</html>
