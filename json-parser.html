@@ -17,13 +17,21 @@
     <section class="container d-flex vh-100">
         <div class="p-3 w-50">
             <div class="h-100">
-                <h3>before</h3>
+                <div class="mb-3">
+                    <h3>before</h3>
+                </div>
                 <textarea name="before" id="before" cols="30" rows="10" class="w-100 h-75 form-control">hi</textarea>
             </div>
         </div>
         <div class="p-3 w-50">
             <div class="h-100">
-                <h3>after</h3>
+                <div class="d-flex mb-2">
+                    <h3 class="me-5">after</h3>
+                    <select class="form-select" id="spaceCount">
+                        <option value="2" selected>2</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
                 <textarea name="after" id="after" cols="30" rows="10" class="w-100 h-75 form-control" style="word-break: break-all;">hi</textarea>
             </div>
         </div>
